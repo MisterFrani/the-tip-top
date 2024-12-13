@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-tip-top
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: the-tip-top
+  template:
+    metadata:
+      labels:
+        app: the-tip-top
+    spec:
+      containers:
+        - name: the-tip-top
+          image: the-tip-top:latest
+          ports:
+            - containerPort: 3000
